@@ -1,0 +1,40 @@
+//
+//  DetailViewController.swift
+//  ios101-project6-tumblr
+//
+//  Created by Nathaniel Baez on 03/28/2024.
+//
+
+import UIKit
+import Nuke
+
+class DetailViewController: UIViewController {
+    
+    var post: Post!
+
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        // Create a constant and assign the functionality to remove HTM tags from the caption string
+        let newCaption = post.caption.trimHTMLTags()
+        
+        // Assign the final caption to the text field
+        textView.text = newCaption
+        
+        if let photo = post.photos.first {
+            let url = photo.originalSize.url
+            Nuke.loadImage(with: url, into: imageView)
+        }
+        
+        // Prevent large interactive title in the DetailViewController
+        navigationItem.largeTitleDisplayMode = .never
+    }
+}
