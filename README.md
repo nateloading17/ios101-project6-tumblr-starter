@@ -2,7 +2,7 @@
 
 Submitted by: **Nathaniel Baez**
 
-**Tumblr** is an app that fetches posts and makes them clickable so that the user can view the entire storyline of the article/post.
+**Tumblr** is an app that fetches NYC posts and makes them clickable so that the user can view the entire storyline of the article/post.
 
 Time spent: **4** hours spent in total
 
